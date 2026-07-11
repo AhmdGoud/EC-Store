@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import heroImage from "../../assets/logos/heroImage.png";
 
 function Hero() {
@@ -20,9 +21,11 @@ function Hero() {
             <button className="rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
               Shop now
             </button>
-            <button className="rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100">
-              Explore collection
-            </button>
+            <Link to="/products">
+              <button className="rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100">
+                Explore collection
+              </button>
+            </Link>
           </div>
           <div className="grid gap-3 sm:grid-cols-3">
             <div className="rounded-3xl bg-slate-100 p-5 text-sm">

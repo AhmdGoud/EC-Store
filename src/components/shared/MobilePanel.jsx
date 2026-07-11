@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import cart from "../../assets/icons/cart-outline.svg";
+import { useSelector } from "react-redux";
 
 function MobilePanel({ onOpenSignIn, onOpenSignUp }) {
+  const itemsNumber = useSelector((state) => state.cart.items.length);
+
   return (
     <>
       <div className="absolute left-0 right-0 top-full z-40 mt-2 rounded-b-lg bg-white shadow-md md:hidden">
@@ -30,6 +33,13 @@ function MobilePanel({ onOpenSignIn, onOpenSignUp }) {
               className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
             >
               <img src={cart} alt="Cart" className="h-5 w-5" />
+              {itemsNumber ? (
+                <span className="-ml-4 -mt-4 inline-flex h-3 items-center justify-center rounded-full bg-rose-500 px-2 text-xs font-bold text-white">
+                  {itemsNumber}
+                </span>
+              ) : (
+                ""
+              )}
               Cart
             </Link>
           </div>

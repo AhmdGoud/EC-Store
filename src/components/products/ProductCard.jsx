@@ -17,7 +17,7 @@ function ProductCard({ product }) {
   return (
     <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md group">
       <img
-        src={product.image}
+        src={`${process.env.PUBLIC_URL}/${product.image}`}
         alt={product.name}
         className="h-52 w-full object-cover"
       />
