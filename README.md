@@ -23,13 +23,13 @@ A modern e-commerce application built with React, featuring secure user authenti
 | --------------------------- | ------------------------------------- |
 | ![](./screenshots/home.png) | ![](./screenshots/productDetails.png) |
 
-| Cart                        | Authentication              |
-| --------------------------- | --------------------------- |
-| ![](./screenshots/cart.png) | ![](./screenshots/auth.png) |
+| products                        | Authentication              |
+| ------------------------------- | --------------------------- |
+| ![](./screenshots/products.png) | ![](./screenshots/auth.png) |
 
-| products  
+| cart  
 | ---------------------------
-| ![](./screenshots/products.png)
+| ![](./screenshots/cart.png)
 
 ---
 
