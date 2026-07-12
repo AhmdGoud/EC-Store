@@ -2,21 +2,6 @@
 
 A modern e-commerce application built with React, featuring secure user authentication, real-time product search, cart management, and responsive design. The app focuses on performance, usability, and a seamless shopping experience across devices.
 
-## ✨ Features
-
-- 🔐 User Authentication (Sign Up & Login)
-- 🔎 Search products
-- ❤️ Add products to favorites
-- 🛒 Shopping cart with quantity management
-- 💰 Price calculation and order summary
-- 📱 Fully responsive design
-- 🎨 Modern UI with Tailwind CSS
-- 💾 Persistent data using Local Storage
-- ⚡ State management with Redux Toolkit
-- 🚀 Client-side routing with React Router
-
----
-
 ## 📸 Screenshots
 
 | Home                        | Product Details                       |
@@ -30,6 +15,21 @@ A modern e-commerce application built with React, featuring secure user authenti
 | cart  
 | ---------------------------
 | ![](./screenshots/cart.png)
+
+---
+
+## ✨ Features
+
+- 🔐 User Authentication (Sign Up & Login)
+- 🔎 Search products
+- ❤️ Add products to favorites
+- 🛒 Shopping cart with quantity management
+- 💰 Price calculation and order summary
+- 📱 Fully responsive design
+- 🎨 Modern UI with Tailwind CSS
+- 💾 Persistent data using Local Storage
+- ⚡ State management with Redux Toolkit
+- 🚀 Client-side routing with React Router
 
 ---
 
