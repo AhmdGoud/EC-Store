@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   status: false,
-
+  currentUserName: "",
   users: JSON.parse(localStorage.getItem("users")) || [],
 };
 
@@ -10,7 +10,7 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    log(state) {
+    handelLog(state) {
       state.status = !state.status;
     },
 
@@ -18,8 +18,13 @@ const authSlice = createSlice({
       const newUser = action.payload;
       state.users.push(newUser);
     },
+
+    handelCurrentUserName(state, action) {
+      state.currentUserName = action.payload;
+    },
   },
 });
 
-export const { log, addNewUser } = authSlice.actions;
+export const { handelLog, addNewUser, handelCurrentUserName } =
+  authSlice.actions;
 export default authSlice.reducer;

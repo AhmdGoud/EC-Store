@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addNewUser } from "../../store/authSlice";
+import { handelCurrentUserName } from "../../store/authSlice";
 
 function SignUp({ onSignUp }) {
   const [values, setValues] = useState({
@@ -13,8 +14,9 @@ function SignUp({ onSignUp }) {
   const [error, setError] = useState("");
   const dispatch = useDispatch();
 
-  const { email, password } = values;
+  const { name, email, password } = values;
   const newUser = {
+    name: name,
     email: email,
     password: password,
   };
@@ -55,6 +57,7 @@ function SignUp({ onSignUp }) {
     if (isUserExist()) return;
 
     dispatch(addNewUser(newUser));
+    dispatch(handelCurrentUserName(name));
 
     setValues({ name: "", email: "", password: "", confirm: "" });
   };

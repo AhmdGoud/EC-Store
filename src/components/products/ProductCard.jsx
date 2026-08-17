@@ -15,7 +15,7 @@ function ProductCard({ product }) {
   const isAdded = cartItems.some((item) => item.id === product.id);
 
   return (
-    <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md group">
+    <div className="relative overflow-hidden rounded-[1rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md group">
       <img
         src={`${process.env.PUBLIC_URL}/${product.image}`}
         alt={product.name}
@@ -52,7 +52,7 @@ function ProductCard({ product }) {
             className={`inline-flex rounded-full px-4 py-2 text-sm font-semibold text-white transition ${
               isAdded
                 ? "bg-green-600 hover:bg-green-700"
-                : "bg-slate-900 hover:bg-slate-800"
+                : "bg-gray-900 hover:bg-gray-800"
             }`}
           >
             {isAdded ? "Item is added" : "Add to cart"}

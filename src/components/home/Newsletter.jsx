@@ -1,7 +1,7 @@
 function Newsletter() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-      <div className="rounded-[1rem] bg-slate-900 px-6 py-10 text-white shadow-2xl sm:px-10">
+      <div className="rounded-[1rem] bg-gray-900 px-6 py-10 text-white shadow-2xl sm:px-10">
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">
@@ -17,10 +17,10 @@ function Newsletter() {
           </div>
           <div className="rounded-2xl bg-white/10 p-6">
             <input
-              className="w-full rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm text-white outline-none placeholder:text-slate-300"
+              className="w-full rounded-lg border border-white/20 bg-white/10 px-5 py-3 text-sm text-white outline-none placeholder:text-slate-300"
               placeholder="Enter your email"
             />
-            <button className="mt-4 w-full rounded-full bg-emerald-400 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-emerald-300">
+            <button className="mt-4 w-full rounded-lg bg-emerald-400 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-emerald-300">
               Subscribe
             </button>
           </div>

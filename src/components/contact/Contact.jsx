@@ -106,7 +106,7 @@ function Contact() {
 
           <button
             type="submit"
-            className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-emerald-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300"
+            className="mt-8 inline-flex w-full items-center justify-center rounded-xl bg-emerald-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300"
           >
             Send message
           </button>

@@ -1,11 +1,15 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { handelCurrentUserName } from "../../store/authSlice";
 
 function SignIn({ onSignIn }) {
+  const dispatch = useDispatch();
+
   const [values, setValues] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
 
   const users = useSelector((state) => state.auth.users) || [];
+  let currentUserName = "";
 
   function isUserExist() {
     if (users) {
@@ -15,6 +19,8 @@ function SignIn({ onSignIn }) {
             setError("password is not correct");
             return false;
           }
+
+          currentUserName = user.name;
 
           return true;
         }
@@ -39,6 +45,7 @@ function SignIn({ onSignIn }) {
     }
 
     if (isUserExist()) {
+      dispatch(handelCurrentUserName(currentUserName));
       onSignIn();
     } else {
       return;

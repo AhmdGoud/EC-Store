@@ -2,7 +2,11 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 function Profile() {
-  const authStatus = useSelector((state) => state.auth.status);
+  const userName = useSelector((state) => state.auth.currentUserName);
+  const userFirstName = userName?.split(" ")[0];
+  const nameCapitalized =
+    userFirstName.charAt(0).toUpperCase() + userFirstName.slice(1);
+
   const itemCount = useSelector((state) => state.cart.items.length);
 
   return (
@@ -11,14 +15,14 @@ function Profile() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-4">
             <div className="flex h-14 w-14 items-center justify-center rounded-full bg-slate-900 text-xl font-semibold text-white">
-              U
+              {userFirstName[0].toUpperCase()}
             </div>
             <div>
-              <h1 className="text-2xl font-semibold text-slate-900">
+              <h1 className="text-2xl font-semibold text-gray-900">
                 My Profile
               </h1>
               <p className="text-sm text-slate-500">
-                Welcome back! This is a simple profile view for your account.
+                Welcome back! {nameCapitalized}
               </p>
             </div>
           </div>
@@ -31,9 +35,7 @@ function Profile() {
           <div className="mt-4 space-y-3 text-sm text-slate-600">
             <div className="flex items-center justify-between">
               <span>Status</span>
-              <span className="font-medium text-slate-900">
-                {authStatus ? "Active" : "Not signed in"}
-              </span>
+              <span className="font-medium text-green-600">Active</span>
             </div>
             <div className="flex items-center justify-between">
               <span>Items in cart</span>
@@ -49,7 +51,7 @@ function Profile() {
           <div className="mt-4 flex flex-col gap-3">
             <Link
               to="/products"
-              className="rounded-xl bg-slate-900 px-4 py-2 text-center text-sm font-semibold text-white transition hover:bg-slate-800"
+              className="rounded-xl bg-gray-900 px-4 py-2 text-center text-sm font-semibold text-white transition hover:bg-slate-800"
             >
               Continue shopping
             </Link>
