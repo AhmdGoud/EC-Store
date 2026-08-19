@@ -5,7 +5,7 @@ function Profile() {
   const userName = useSelector((state) => state.auth.currentUserName);
   const userFirstName = userName?.split(" ")[0];
   const nameCapitalized =
-    userFirstName?.charAt(0).toUpperCase() + userFirstName.slice(1);
+    userFirstName?.charAt(0).toUpperCase() + userFirstName?.slice(1);
 
   const itemCount = useSelector((state) => state.cart.items.length);
 
