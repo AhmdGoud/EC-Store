@@ -24,6 +24,11 @@ function Navbar() {
     item.name.toLowerCase().includes(searchInput.toLowerCase()),
   );
 
+  const userName = useSelector((state) => state.auth.currentUserName);
+  const userFirstName = userName?.split(" ")[0];
+  const nameCapitalized =
+    userFirstName?.charAt(0).toUpperCase() + userFirstName.slice(1);
+
   const itemsNumber = useSelector((state) => state.cart.items.length);
   const authStatus = useSelector((state) => state.auth.status);
   const dispatch = useDispatch();
@@ -100,12 +105,12 @@ function Navbar() {
         />
       )}
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-end gap-2">
         {/* Mobile hamburger*/}
         <button
           onClick={() => setMenuOpen((s) => !s)}
           aria-label="Toggle menu"
-          className="md:hidden inline-flex items-center justify-center rounded-full border border-slate-200 bg-white p-2 text-sm text-slate-700 transition hover:bg-slate-100"
+          className="md:hidden self-end -mr-2 inline-flex items-center justify-center rounded-full border border-slate-200 bg-white p-2 text-sm text-slate-700 transition hover:bg-slate-100"
         >
           <svg
             className="h-5 w-5"
@@ -124,8 +129,8 @@ function Navbar() {
 
         {/* Cart and Auth buttons*/}
         <Link to="/cart">
-          <button className="hidden md:inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-semibold text-slate-700 transition hover:bg-slate-100">
-            <img src={cart} alt="Cart" className="h-6 w-6" />
+          <button className="hidden md:inline-flex items-center  rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-semibold text-slate-700 transition hover:bg-slate-100">
+            <img src={cart} alt="Cart" className="h-5 w-5" />
             {itemsNumber ? (
               <span className="-ml-2 -mt-4 inline-flex h-3 items-center justify-center rounded-full bg-rose-500 px-2 text-xs font-bold text-white">
                 {itemsNumber}
@@ -141,14 +146,15 @@ function Navbar() {
             <Link to="/">
               <button
                 onClick={() => dispatch(handelLog())}
-                className="hidden rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 md:inline-flex"
+                className="hidden rounded-full border border-slate-200 bg-white px-4 py-1 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 md:inline-flex"
               >
                 Sign out
               </button>
             </Link>
             <Link to="/profile">
               <button className="hidden md:inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-semibold text-slate-700 transition hover:bg-slate-100">
-                <img src={person} alt="Cart" className="h-6 w-6" />
+                <img src={person} alt="Cart" className="h-5 w-5" />
+                <span>Hi, {nameCapitalized}</span>
               </button>
             </Link>
           </>
@@ -156,13 +162,13 @@ function Navbar() {
           <>
             <button
               onClick={() => openAuthModal("signIn")}
-              className="hidden rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 md:inline-flex"
+              className="hidden rounded-full border border-slate-200 bg-white px-4 py-1 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 md:inline-flex"
             >
               Sign in
             </button>
             <button
               onClick={() => openAuthModal("signUp")}
-              className="hidden md:inline-flex rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-slate-800"
+              className="hidden md:inline-flex rounded-full bg-slate-900 px-5 py-1 text-sm font-semibold text-white transition hover:bg-slate-800"
             >
               Sign up
             </button>
